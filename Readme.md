@@ -12,3 +12,7 @@ dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c Config
 **Operational Store:** is keeping the temporary data such as authorization codes and refresh tokens. For a better understanding I do encourage you to read the [Identity Server docs](https://identityserver4.readthedocs.io/).
 
 URL: documention for configuration http://localhost:5000/.well-known/openid-configuration
+
+### API Resourcer
+
+In the API resourcer you should add IdentityServer4.AccessTokenValidation NuGet package.

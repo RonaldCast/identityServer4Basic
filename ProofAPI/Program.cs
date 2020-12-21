@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Identity_server
+namespace ProofAPI
 {
     public class Program
     {
@@ -21,7 +21,7 @@ namespace Identity_server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                        .UseUrls("http://localhost:5000");
+                        .UseUrls("http://localhost:5001");
                 });
     }
 }
