@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using IdentityServer4.AccessTokenValidation;
+using IdentityServer4.Models;
 
 namespace ProofAPI
 {
@@ -35,6 +36,7 @@ namespace ProofAPI
                     op.Authority = "http://localhost:5000";
                     op.RequireHttpsMetadata = false;
                     op.ApiName = "my-api";
+                    
                 });
 
             //para que no acepte todos los tokens
@@ -42,7 +44,6 @@ namespace ProofAPI
             {
                 op.AddPolicy("ApiScope", policy =>
                 {
-                    
                     policy.RequireAuthenticatedUser();
                     policy.RequireClaim("scope", "read");
                     policy.RequireClaim("scope", "write");

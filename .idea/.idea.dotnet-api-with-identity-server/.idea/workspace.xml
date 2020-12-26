@@ -6,6 +6,7 @@
     <projectFile>WebApplication/WebApplication.csproj</projectFile>
     <projectFile>ProofAPI/ProofAPI.csproj</projectFile>
     <projectFile>ProofClient/ProofClient.csproj</projectFile>
+    <projectFile>MvcClient/MvcClient.csproj</projectFile>
   </component>
   <component name="BranchesTreeState">
     <expand />
@@ -13,12 +14,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d331d6bf-ebd9-4769-b18d-b9488cd5c753" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ProofAPI/Controllers/IdentityController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-api-with-identity-server/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-api-with-identity-server/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dotnet-api-with-identity-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dotnet-api-with-identity-server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dotnet-api-with-identity-server.sln" beforeDir="false" afterPath="$PROJECT_DIR$/dotnet-api-with-identity-server.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/identity-server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProofAPI/ProofAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProofAPI/ProofAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProofAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProofAPI/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/identity-server/Data/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/DatabaseInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/identity-server/Data/DatabaseInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/ConfigurationDb/20201219005650_InitialIdentityServerConfigurationDbMigration.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/ConfigurationDb/20201219005650_InitialIdentityServerConfigurationDbMigration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/ConfigurationDb/ConfigurationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/PersistedGrantDb/20201219005422_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/PersistedGrantDb/20201219005422_InitialIdentityServerPersistedGrantDbMigration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-server/Data/Migrations/IdentityServer/PersistedGrantDb/PersistedGrantDbContextModelSnapshot.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +47,21 @@
         <option value="$PROJECT_DIR$/dentity-server/Program.cs" />
         <option value="$PROJECT_DIR$/dentity-server/appsettings.Development.json" />
         <option value="$PROJECT_DIR$/dentity-server/Startup.cs" />
-        <option value="$PROJECT_DIR$/identity-server/Data/DatabaseInitializer.cs" />
         <option value="$PROJECT_DIR$/identity-server/Startup.cs" />
         <option value="$PROJECT_DIR$/ProofAPI/Controllers/IdentityController.cs" />
         <option value="$PROJECT_DIR$/ProofAPI/Program.cs" />
-        <option value="$PROJECT_DIR$/identity-server/Data/Config.cs" />
         <option value="$PROJECT_DIR$/identity-server/Program.cs" />
         <option value="$PROJECT_DIR$/ProofClient/Program.cs" />
         <option value="$PROJECT_DIR$/ProofAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/identity-server/Data/DatabaseInitializer.cs" />
+        <option value="$PROJECT_DIR$/identity-server/Data/Config.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1lqv5k8ZV0CcMheIpdQ41EOVYeC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,7 +80,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.ProofAPI">
+  <component name="RunManager" selected=".NET Launch Settings Profile.dentity-server: dentity_server">
     <configuration name="ProofClient" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -234,30 +243,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="854" height="464" key="DebuggerActiveHint/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608475438366" />
-    <state width="1638" height="348" key="GridCell.Tab.0.bottom" timestamp="1608524390127">
-      <screen x="0" y="0" width="1680" height="980" />
+    <state width="1638" height="431" key="GridCell.Tab.0.bottom" timestamp="1608844210212">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="391" key="GridCell.Tab.0.bottom/-140.-1057.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1608474444379" />
     <state width="1638" height="348" key="GridCell.Tab.0.bottom/-140.-1057.1920.1057/0.0.1680.980@0.0.1680.980" timestamp="1608524390127" />
-    <state width="1638" height="344" key="GridCell.Tab.0.bottom/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608524388677" />
-    <state width="1638" height="348" key="GridCell.Tab.0.center" timestamp="1608524390125">
-      <screen x="0" y="0" width="1680" height="980" />
+    <state width="1638" height="431" key="GridCell.Tab.0.bottom/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608844210212" />
+    <state width="1638" height="431" key="GridCell.Tab.0.center" timestamp="1608844210210">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="391" key="GridCell.Tab.0.center/-140.-1057.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1608474444377" />
     <state width="1638" height="348" key="GridCell.Tab.0.center/-140.-1057.1920.1057/0.0.1680.980@0.0.1680.980" timestamp="1608524390125" />
-    <state width="1638" height="344" key="GridCell.Tab.0.center/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608524388676" />
-    <state width="1638" height="348" key="GridCell.Tab.0.left" timestamp="1608524390124">
-      <screen x="0" y="0" width="1680" height="980" />
+    <state width="1638" height="431" key="GridCell.Tab.0.center/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608844210210" />
+    <state width="1638" height="431" key="GridCell.Tab.0.left" timestamp="1608844210210">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="391" key="GridCell.Tab.0.left/-140.-1057.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1608474444376" />
     <state width="1638" height="348" key="GridCell.Tab.0.left/-140.-1057.1920.1057/0.0.1680.980@0.0.1680.980" timestamp="1608524390124" />
-    <state width="1638" height="344" key="GridCell.Tab.0.left/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608524388675" />
-    <state width="1638" height="348" key="GridCell.Tab.0.right" timestamp="1608524390126">
-      <screen x="0" y="0" width="1680" height="980" />
+    <state width="1638" height="431" key="GridCell.Tab.0.left/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608844210210" />
+    <state width="1638" height="431" key="GridCell.Tab.0.right" timestamp="1608844210211">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="391" key="GridCell.Tab.0.right/-140.-1057.1920.1057/0.0.1680.1050@0.0.1680.1050" timestamp="1608474444378" />
     <state width="1638" height="348" key="GridCell.Tab.0.right/-140.-1057.1920.1057/0.0.1680.980@0.0.1680.980" timestamp="1608524390126" />
-    <state width="1638" height="344" key="GridCell.Tab.0.right/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608524388677" />
+    <state width="1638" height="431" key="GridCell.Tab.0.right/-140.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1608844210211" />
     <state width="1638" height="344" key="GridCell.Tab.1.bottom" timestamp="1608524388680">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

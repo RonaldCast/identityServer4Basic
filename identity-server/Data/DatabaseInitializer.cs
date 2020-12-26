@@ -47,6 +47,16 @@ namespace Identity_server.Data
 
                 context.SaveChanges();
             }
+
+            if (!context.IdentityResources.Any())
+            {
+                foreach (var resource in Config.IdentityResources)
+                {
+                    context.IdentityResources.Add(resource.ToEntity());
+                }
+
+                context.SaveChanges();
+            }
             
         }
     }

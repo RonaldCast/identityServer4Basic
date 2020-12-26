@@ -13,13 +13,13 @@
           <e p="Migrations" t="Include">
             <e p="IdentityServer" t="Include">
               <e p="ConfigurationDb" t="Include">
-                <e p="20201219005650_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
-                <e p="20201219005650_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
+                <e p="20201224210901_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
+                <e p="20201224210901_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
                 <e p="ConfigurationDbContextModelSnapshot.cs" t="Include" />
               </e>
               <e p="PersistedGrantDb" t="Include">
-                <e p="20201219005422_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
-                <e p="20201219005422_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
+                <e p="20201224210843_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
+                <e p="20201224210843_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
                 <e p="PersistedGrantDbContextModelSnapshot.cs" t="Include" />
               </e>
             </e>
