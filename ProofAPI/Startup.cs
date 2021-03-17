@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using IdentityServer4.AccessTokenValidation;
 using IdentityServer4.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ProofAPI
 {
@@ -24,35 +25,29 @@ namespace ProofAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvcCore()
                 .AddAuthorization();
             
-            services.AddAuthentication("Bearer")
-                .AddIdentityServerAuthentication(op =>
-                {
-                    op.Authority = "http://localhost:5000";
-                    op.RequireHttpsMetadata = false;
-                    op.ApiName = "my-api";
-                    
-                });
-
-            //para que no acepte todos los tokens
-            services.AddAuthorization(op =>
+            services.AddAuthentication(options =>
             {
-                op.AddPolicy("ApiScope", policy =>
-                {
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "read");
-                    policy.RequireClaim("scope", "write");
-                });
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                
+
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "https://localhost:5000";
+                options.Audience = "my-api";
+                options.RequireHttpsMetadata = false;
+                
             });
+
+            
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -71,8 +66,8 @@ namespace ProofAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers()
-                    .RequireAuthorization("ApiScope");
+                endpoints.MapControllers();
+                // .RequireAuthorization("ApiScope");
             });
         }
     }

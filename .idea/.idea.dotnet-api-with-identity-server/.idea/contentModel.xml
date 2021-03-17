@@ -7,25 +7,51 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="cert_rsa512.pfx" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="IdentityController.cs" t="Include" />
+        </e>
         <e p="Data" t="Include">
+          <e p="AppDbContext.cs" t="Include" />
           <e p="Config.cs" t="Include" />
           <e p="DatabaseInitializer.cs" t="Include" />
+          <e p="DomainModel" t="Include">
+            <e p="Role.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
           <e p="Migrations" t="Include">
+            <e p="App" t="Include">
+              <e p="20210316021247_InitMigration.cs" t="Include" />
+              <e p="20210316021247_InitMigration.Designer.cs" t="Include" />
+              <e p="AppDbContextModelSnapshot.cs" t="Include" />
+            </e>
             <e p="IdentityServer" t="Include">
               <e p="ConfigurationDb" t="Include">
-                <e p="20201224210901_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
-                <e p="20201224210901_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
+                <e p="20210316015655_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
+                <e p="20210316015655_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
                 <e p="ConfigurationDbContextModelSnapshot.cs" t="Include" />
               </e>
               <e p="PersistedGrantDb" t="Include">
-                <e p="20201224210843_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
-                <e p="20201224210843_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
+                <e p="20210316015706_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
+                <e p="20210316015706_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
                 <e p="PersistedGrantDbContextModelSnapshot.cs" t="Include" />
               </e>
             </e>
           </e>
+          <e p="SettingIdentity" t="Include">
+            <e p="ProfileService.cs" t="Include" />
+            <e p="ResourceOwnerPasswordValidator.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DTO" t="Include">
+          <e p="AssignRole.cs" t="Include" />
+          <e p="CreateRole.cs" t="Include" />
+          <e p="UserSignUp.cs" t="Include" />
         </e>
         <e p="identity-server.csproj" t="IncludeRecursive" />
+        <e p="Mapping" t="Include">
+          <e p="MappingProfile.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -46,7 +72,6 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="IdentityController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

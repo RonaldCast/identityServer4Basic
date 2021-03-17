@@ -16,3 +16,13 @@ URL: documention for configuration http://localhost:5000/.well-known/openid-conf
 ### API Resourcer
 
 In the API resourcer you should add IdentityServer4.AccessTokenValidation NuGet package.
+
+
+### Create First User: 
+
+Enpoint: http://localhost:5000/signup
+
+"email": "ronald@gmail.com",
+"firstName": "Ronald",
+"lastName": "Castillo",
+"password": "1234567"
