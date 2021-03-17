@@ -16,7 +16,6 @@ namespace Identity_server.Data
 
             
             var context = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
-            
             context.Database.Migrate();
 
             if (!context.Clients.Any())

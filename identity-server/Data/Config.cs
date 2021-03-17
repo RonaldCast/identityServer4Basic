@@ -32,7 +32,7 @@ namespace Identity_server.Data
                     },
                     AllowedScopes =
                     {
-                        "my-api", "write", "read"
+                        "my-api", "write", "read", IdentityServerConstants.LocalApi.ScopeName 
                     },
                     Claims =  new List<ClientClaim>
                     {
@@ -60,6 +60,7 @@ namespace Identity_server.Data
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.LocalApi.ScopeName, 
                         "myapi.write",
                         "myapi.read"
                     },
@@ -79,15 +80,16 @@ namespace Identity_server.Data
                 Scopes = new List<string>()
                 {
                     "myapi.write",
-                    "myapi.read"
+                    "myapi.read", IdentityServerConstants.LocalApi.ScopeName
                 }
-            }    
+            } 
         };
         
         public static IEnumerable<ApiScope> ApiScopes = new List<ApiScope>
         {
               new ApiScope("myapi.write"),
-              new ApiScope("myapi.read")
+              new ApiScope("myapi.read"), 
+              new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
     }
 }

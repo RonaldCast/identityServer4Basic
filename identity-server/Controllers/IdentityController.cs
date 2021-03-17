@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Identity_server.Data.DomainModel;
 using Identity_server.DTO;
+using IdentityServer4;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace Identity_server.Controllers
 {
@@ -96,8 +98,7 @@ namespace Identity_server.Controllers
             }
             return BadRequest();
         }
-        
-      // [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(LocalApi.PolicyName, Roles = "Admin")]
         [HttpGet("Hello")]
         public ActionResult d()
         {

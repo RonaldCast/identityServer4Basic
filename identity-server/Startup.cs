@@ -29,7 +29,6 @@ namespace Identity_server
             _environment = environment;
         }
 
-      
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -69,12 +68,11 @@ namespace Identity_server
                     op.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql =>
                         sql.MigrationsAssembly(migrationAssembly))
                 ).AddSigningCredential(rsaCertificate);
-                
-                //.AddDeveloperSigningCredential();
 
             builder.Services.AddTransient<IProfileService, ProfileService>();
-
-
+            
+            services.AddLocalApiAuthentication();
+            
             services.AddAutoMapper(typeof(Startup));
         }
 
