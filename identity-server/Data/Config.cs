@@ -16,7 +16,7 @@ namespace Identity_server.Data
                     new IdentityResources.Email()
             };
         
-        public static List<Client> Clients = new List<Client>
+        public static  readonly List<Client> Clients = new List<Client>
         {
                 new Client
                 {
@@ -60,15 +60,8 @@ namespace Identity_server.Data
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        "my-api", "write", "read"
-                    },
-                    Claims =  new List<ClientClaim>
-                    {
-                        new ClientClaim("companyName", "Referencia")
-                    }, 
-                    AllowedCorsOrigins = new List<string>
-                    {
-                        "https://localhost:5001",
+                        "myapi.write",
+                        "myapi.read"
                     },
                     AccessTokenLifetime = 86400
                     
@@ -77,7 +70,7 @@ namespace Identity_server.Data
         
         
         
-        public static  List<ApiResource> ApiResources = new List<ApiResource>
+        public static readonly  List<ApiResource> ApiResources = new List<ApiResource>
         {
             new ApiResource()
             {
@@ -85,18 +78,16 @@ namespace Identity_server.Data
                 DisplayName =  "My Fancy Secured API",
                 Scopes = new List<string>()
                 {
-                    "write",
-                    "read"
+                    "myapi.write",
+                    "myapi.read"
                 }
             }    
         };
         
         public static IEnumerable<ApiScope> ApiScopes = new List<ApiScope>
         {
-            new ApiScope("read"),
-            new ApiScope("write")
+              new ApiScope("myapi.write"),
+              new ApiScope("myapi.read")
         };
-        
-        
     }
 }
