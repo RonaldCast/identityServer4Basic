@@ -42,7 +42,7 @@ namespace Identity_server.Data
                     {
                         "https://localhost:5001",
                     },
-                    AccessTokenLifetime = 86400
+                    AccessTokenLifetime = 10
                     
                 },
                 
@@ -60,11 +60,16 @@ namespace Identity_server.Data
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        IdentityServerConstants.LocalApi.ScopeName, 
+                        IdentityServerConstants.LocalApi.ScopeName,
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
                         "myapi.write",
                         "myapi.read"
                     },
-                    AccessTokenLifetime = 86400
+                    AllowOfflineAccess = true,
+                    RefreshTokenUsage = TokenUsage.OneTimeOnly,
+                    RefreshTokenExpiration = TokenExpiration.Sliding,
+                    AccessTokenLifetime = 10
+                    
                     
                 }
         };
