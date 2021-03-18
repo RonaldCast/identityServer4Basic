@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>dentity_server</RootNamespace>
+        <RootNamespace>Identity_server</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -24,6 +24,8 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="NSwag.AspNetCore" Version="13.10.8" />
+      <PackageReference Include="NSwag.Core" Version="13.10.8" />
     </ItemGroup>
 
 </Project>

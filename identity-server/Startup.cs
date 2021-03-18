@@ -14,7 +14,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Identity_server
 {
@@ -52,9 +51,8 @@ namespace Identity_server
                 .AddDefaultTokenProviders();
 
             //certificate cert_rsa512
-            var rsaCertificate = new X509Certificate2(
+           var rsaCertificate = new X509Certificate2(
                 Path.Combine(_environment.ContentRootPath, "cert_rsa512.pfx"), "1234");
-
             
             var builder = services.AddIdentityServer()
 
@@ -72,6 +70,22 @@ namespace Identity_server
             builder.Services.AddTransient<IProfileService, ProfileService>();
             
             services.AddLocalApiAuthentication();
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "IdentityServer";
+                    document.Info.Description = "API identityserver";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Ronald Castillo",
+                        Email = "ronaldcastillo789@gmail.com",
+                    };
+                   
+                };
+            });
             
             services.AddAutoMapper(typeof(Startup));
         }
@@ -90,8 +104,12 @@ namespace Identity_server
             app.UseIdentityServer();
             app.UseAuthentication();
             app.UseAuthorization();
+           
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

@@ -73,9 +73,7 @@ namespace Identity_server.Data
                     
                 }
         };
-        
-        
-        
+
         public static readonly  List<ApiResource> ApiResources = new List<ApiResource>
         {
             new ApiResource()
