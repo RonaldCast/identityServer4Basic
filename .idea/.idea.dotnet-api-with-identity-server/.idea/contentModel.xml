@@ -46,6 +46,7 @@
         <e p="DTO" t="Include">
           <e p="AssignRole.cs" t="Include" />
           <e p="CreateRole.cs" t="Include" />
+          <e p="Proof.cs" t="Include" />
           <e p="UserSignUp.cs" t="Include" />
         </e>
         <e p="identity-server.csproj" t="IncludeRecursive" />
@@ -65,6 +66,9 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="tempkey.jwk" t="Include" />
+        <e p="Validator" t="Include">
+          <e p="ProofValidate.cs" t="Include" />
+        </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="ProofAPI" t="IncludeRecursive">

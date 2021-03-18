@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using Identity_server.Data;
@@ -14,6 +15,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
+using FluentValidation.AspNetCore;
+using NSwag;
+using NSwag.Generation.Processors.Security;
 
 namespace Identity_server
 {
@@ -30,10 +34,15 @@ namespace Identity_server
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()                
+                .AddFluentValidation(fv => 
+                    { fv.RegisterValidatorsFromAssemblyContaining<Startup>();});
+
 
             var connectionString = Configuration.GetConnectionString("IdentityServerDatabase");
             var migrationAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            
+
 
             var dataAssemblyName = typeof(AppDbContext).Assembly.GetName().Name;
             services.AddDbContext<AppDbContext>(op => op.UseSqlServer(connectionString,
@@ -70,21 +79,21 @@ namespace Identity_server
             builder.Services.AddTransient<IProfileService, ProfileService>();
             
             services.AddLocalApiAuthentication();
-            services.AddSwaggerDocument(config =>
+
+            services.AddOpenApiDocument(document =>
             {
-                config.PostProcess = document =>
+                document.Title = "IdentityServer";
+                document.Description = "API identityserver";
+                document.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
                 {
-                    document.Info.Version = "v1";
-                    document.Info.Title = "IdentityServer";
-                    document.Info.Description = "API identityserver";
-                    document.Info.TermsOfService = "None";
-                    document.Info.Contact = new NSwag.OpenApiContact
-                    {
-                        Name = "Ronald Castillo",
-                        Email = "ronaldcastillo789@gmail.com",
-                    };
-                   
-                };
+                    Type = OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}."
+                });
+ 
+                document.OperationProcessors.Add(
+                    new AspNetCoreOperationSecurityScopeProcessor("JWT"));
             });
             
             services.AddAutoMapper(typeof(Startup));
